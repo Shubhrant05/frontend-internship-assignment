@@ -10,21 +10,19 @@ import { Book } from 'src/app/core/models/book-response.model';
 })
 export class TrendingSubjectsComponent implements OnInit {
 
-  isLoading: boolean = true;
-
-  subjectName: string = '';
+  isLoading = true;
+  subjectName = '';
 
   allBooks: Book[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private subjectsService: SubjectsService
-  ) {}
+  ) { }
 
   getAllBooks() {
     this.subjectsService.getAllBooks(this.subjectName).subscribe((data) => {
       this.allBooks = data?.works;
-      // this.subjectsArray = data;
       this.isLoading = false;
     });
   }

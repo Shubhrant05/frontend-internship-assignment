@@ -1,6 +1,14 @@
+
+<div class="tw-grid tw-place-content-center tw-h-full tw-w-full" *ngIf="isLoading === true">
+  <mat-icon class="spin" aria-label="Loading">refresh</mat-icon>
+</div>
 <div *ngIf="allBooks.length > 0">
-  <front-end-internship-assignment-table-view
-  [booksList]="allBooks"
-  [subjectName]="subjectName"
-  ></front-end-internship-assignment-table-view>
+  <front-end-internship-assignment-table-view [booksList]="allBooks"
+    [subjectName]="subjectName"></front-end-internship-assignment-table-view>
+    <div class="search-button tw-justify-center tw-items-center tw-py-2 tw-px-3 hover:tw-cursor-pointer" routerLink="/" style="width: 10%; margin: 0 auto;">
+      <!-- <mat-icon>arrow_back</mat-icon> -->
+      Back to Home
+      <!-- <mat-icon class="tw-w-5" aria-label="Search Icon">back</mat-icon> -->
+  
+    </div>
 </div>
